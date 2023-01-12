@@ -1,0 +1,10 @@
+function binet(n) {return Math.round((Math.pow((1 + Math.sqrt(5)) / 2, n) - Math.pow((1 - Math.sqrt(5)) / 2, n)) / Math.sqrt(5));}
+function z(x){return (x>10)?x: '0' + x }
+function cf(row){
+var x = binet(row);
+y = (60*60*24*30*12) ,year = parseInt(x/y),
+mm = (60*60*24*30) ,month = parseInt((x%y)/(mm)),
+d = (60*60*24),day = parseInt((x%(mm))/(d)),
+h = (60*60), hours = parseInt((x%(d))/h),
+m = 60, minute = parseInt(x%(h)/m);
+return "number: "+ x +'\n'+ year + ':' + z(month) + ":" + z(day) + ':' + z(hours) + ":" + z(minute) + ':' + z(x%m);}
